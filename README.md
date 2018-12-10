@@ -7,20 +7,22 @@ It has been developed in Angular 5 framework and Test scripts has been written i
 
 Follow the following steps to Run the aplication:
 
-npm install -g @angular/cli
-ng new carRace
+    npm install -g @angular/cli
+    ng new Weather-App
 Replace src folder with the attached src folder
-ng serve
+    ng serve
 
 Step to run the Test Scripts:
 
-ng test
+    ng test
 
 Steps to get Compodoc Report:
 
-npm install --save-dev @compodoc/compodoc
+    npm install --save-dev @compodoc/compodoc
 Add a script task in package.json:
+
     "scripts": {
       "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
     }
-npm run compodoc
+        
+    npm run compodoc
