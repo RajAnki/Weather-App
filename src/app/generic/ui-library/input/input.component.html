@@ -1,0 +1,34 @@
+<div [formGroup]="ulFormGroupNameLib" class="form-field">
+  <input id="{{ulId}}"
+         class="form-field_input"
+         tabindex="0"
+         name="{{ulFormControlName}}"
+         formControlName="{{ulFormControlName}}"
+         (focus)="onFocusInput($event); inputFocused = true;"
+         (blur)="onBlurInput($event); inputFocused = false;"
+         (keydown)="onKeyDownInput($event)"
+         (keypress)="onKeyPressInput($event)"
+         (keyup)="onKeyUpInput($event)"
+         (change)="onChangeInput($event)"
+         [attr.aria-label]="ulAriaLabel"
+         [attr.aria-required]="ulAriaRequired"/>
+  <label id="label{{ulId}}"
+         class="form-field_label"
+         for="{{ulId}}"
+         [ngClass]="((ulFormGroupNameLib.controls[ulFormControlName].value &&
+                      ulFormGroupNameLib.controls[ulFormControlName].value.length > 0) ||
+                      inputFocused === true)?'float':'non-float'">{{ulLabel}}</label>
+</div>
+<div *ngIf="ulFormGroupNameLib.controls[ulFormControlName].invalid && (ulFormGroupNameLib.controls[ulFormControlName].dirty || ulFormGroupNameLib.controls[ulFormControlName].touched)"
+     class="alert alert-danger text-danger">
+  <div *ngIf="ulFormGroupNameLib.controls[ulFormControlName].errors.required"
+       role="alert"
+       aria-live="polite">
+    {{ulLabel}} is required.
+  </div>
+  <div *ngIf="ulFormGroupNameLib.controls[ulFormControlName].errors.pattern"
+       role="alert"
+       aria-live="polite">
+    Allow numbers with an optional decimal point followed by digits</div>
+</div>
+

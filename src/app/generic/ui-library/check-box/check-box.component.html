@@ -1,0 +1,19 @@
+<div class=""
+     [formGroup]="ulFormGroupNameLib">
+  <input id="{{ulId}}"
+         name="{{ulFormControlName}}"
+         role="checkbox"
+         type="checkbox"
+         class=""
+         formControlName="{{ulFormControlName}}"
+         (focus)="onFocusInput($event)"
+         (blur)="onBlurInput($event)"
+         (change)="onChangeInput($event)"
+         (keydown)="onKeyDownInput($event)"
+         (keypress)="onKeyPressInput($event)"
+         (keyup)="onKeyUpInput($event)"
+         (click)="onClickInput($event)"
+         [attr.aria-label]="ulAriaLabel">
+  <label for="{{ulId}}" id="{{ulId}}Label"
+         [attr.aria-label]="ulAriaLabel" [innerHtml]="ulLabel"></label>
+</div>
