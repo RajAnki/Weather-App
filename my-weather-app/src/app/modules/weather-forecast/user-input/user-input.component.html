@@ -1,0 +1,48 @@
+<div [formGroup]="userInputForms" class="row">
+  <div class="col-md-3 col-xs-6 margin-top-right-10">
+  <app-input [ulId]="'input_latitude'"
+            [ulLabel]="'Latitude'"
+            [ulFormControlName]="'latitude'"
+            [ulFormGroupNameLib]="userInputForms"
+            [ulAriaLabel]="'Enter Latitude'"
+            [ulAriaRequired]="true"></app-input>
+  </div>
+  <div class="col-md-3 col-xs-6 margin-top-right-10">
+  <app-input [ulId]="'input_longitude'"
+             [ulLabel]="'Longitude'"
+             [ulFormControlName]="'longitude'"
+             [ulFormGroupNameLib]="userInputForms"
+             [ulAriaLabel]="'Enter longitude'"
+             [ulAriaRequired]="true"></app-input>
+  </div>
+  <div class="col-md-3 col-xs-6 margin-top-right-10" *ngIf="userInputForms.controls['timeSpecific'].value">
+  <app-dropdown [ulId]="'input_time'"
+                [ulLabel]="'Time'"
+                [ulFormControlName]="'time'"
+                [ulFormGroupNameLib]="userInputForms"
+                [ulAriaLabel]="'Enter Time'"
+                [ulListItem]="timeList"
+                [ulDisplay]="'twelveHr'"
+                [ulValue]="'twentyFourHr'"></app-dropdown>
+  </div>
+  <div class="col-md-3 col-xs-6 margin-top-right-10">
+  <app-button [ulId]="'getForecastBtn'"
+              [ulAriaLabel]="'click to get Weather Forecast'"
+              [ulLabel]="'Get Forecast'"
+              (ulClick)="getWeatherForecast()"
+              [ulDisabled]="!userInputForms.valid"></app-button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5 col-xs-6 margin-top-right-10">
+    <app-check-box [ulId]="'check_time'"
+                   [ulLabel]="'Do you want time specific Forecast?'"
+                   [ulFormControlName]="'timeSpecific'"
+                   [ulFormGroupNameLib]="userInputForms"
+                   [ulAriaLabel]="'Please check if you want time specific Forecast'"></app-check-box>
+  </div>
+</div>
+<app-current-weather [currentWeatherObj]="weatherCurrently"></app-current-weather>
+<div class="row">
+  <p *ngIf="apiErrorFlag" role="alert" aria-live="polite">Sorry, Service is currently unavailable!</p>
+</div>

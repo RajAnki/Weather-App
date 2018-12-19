@@ -1,0 +1,13 @@
+<div *ngIf="(currentWeatherObj | json) != '{}'" class="weather-container" role="alert" aria-live="polite">
+  <div>
+    <img [src]='"../../../../assets/icons/"+getWeatherIcon()+".svg"'>
+    <span>{{currentWeatherObj['temperature']}}{{tempUnit}}</span>
+    <p class="margin-right-10">
+      <span class="span_summary">{{currentWeatherObj['summary']}}</span>
+      <span>Humidity: {{currentWeatherObj['humidity']}}</span>
+      <span>Wind Speed: {{currentWeatherObj['windSpeed']}}{{windUnit}}</span>
+      <span>Visibility: {{currentWeatherObj['visibility']}}{{visibilityUnit}}</span>
+      <span>Pressure: {{currentWeatherObj['pressure']}}{{pressureUnit}}</span>
+    </p>
+  </div>
+</div>

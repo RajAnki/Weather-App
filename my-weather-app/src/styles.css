@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.form-field{
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  float: left;
+  text-align: left;
+}
+
+.form-field_input{
+  background: #f2f2f2;
+  padding: 10px 8px 10px 16px;
+  width: 248px;
+}
+
+.form-field_label{
+  position: absolute;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.float {
+  top: 3px;
+  font-size: 10px;
+}
+
+.non-float {
+  top: 12px;
+  font-size: 14px;
+}
+
+.form-field_select{
+  min-width: 150px;
+}
+
+.span_summary{
+  font-weight: bold;
+}
+
+.margin-right-10 span{
+ margin-right: 10px;
+}
+
+.margin-top-right-10{
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+div .alert {
+  position: inherit;
+}
+
+.weather-container {
+  border: 1px solid black;
+  background-color: #cdddf9;
+  text-align: center;
+}
+
+.weather-container span {
+  white-space: nowrap;
+}

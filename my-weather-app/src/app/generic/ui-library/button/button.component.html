@@ -1,0 +1,16 @@
+<button type="button"
+        class="btn btn-primary"
+        tabindex="0"
+        id="{{ulId}}"
+        name="{{ulName}}"
+        (focus)="onFocusInput($event)"
+        (click)="onClickInput($event)"
+        (keydown)="onKeyDownInput($event)"
+        (keypress)="onKeyPressInput($event)"
+        (keyup)="onKeyUpInput($event)"
+        [attr.aria-label]="ulAriaLabel"
+        [disabled]="ulDisabled"
+        [attr.aria-disabled]="ulDisabled"
+        [class]="">
+  {{ulLabel}}
+</button>

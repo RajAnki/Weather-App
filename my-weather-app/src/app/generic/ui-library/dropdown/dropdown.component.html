@@ -1,0 +1,28 @@
+<div class="form-field"
+     [formGroup]="ulFormGroupNameLib">
+  <select
+    class="form-field_input form-field_select"
+    tabindex="0"
+    id="{{ ulId }}"
+    name="{{ulFormControlName}}"
+    [ngClass]=""
+    [formControlName]="ulFormControlName"
+    [attr.aria-required]="ulAriaRequired"
+    [attr.disabled]="ulDisabled"
+    [required]="ulAriaRequired"
+    [attr.aria-label]="ulAriaLabel"
+    (change)="optionChange($event)"
+    (focus)="onFocusInput($event);"
+    (blur)="onBlurInput($event);">
+    <option id="{{listItem[ulValue]}}"
+            [attr.aria-label]="listItem[ulAriaOptionLabel]"
+            value="{{listItem[ulValue]}}"
+            *ngFor="let listItem of ulListItem">{{listItem[ulDisplay]}}
+    </option>
+  </select>
+  <label class="form-field_label float"
+         for="{{ ulId }}"
+         id="{{ulId}}Label"
+         [attr.aria-label]="ulAriaLabel"
+         [ngClass]="">{{ulLabel}}</label>
+</div>
