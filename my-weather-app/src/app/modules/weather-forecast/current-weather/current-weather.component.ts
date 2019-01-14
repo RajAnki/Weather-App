@@ -6,8 +6,7 @@ import { AppConstants } from '../../../generic/app-constant';
  */
 @Component({
   selector: 'app-current-weather',
-  templateUrl: './current-weather.component.html',
-  styleUrls: ['./current-weather.component.css']
+  templateUrl: './current-weather.component.html'
 })
 export class CurrentWeatherComponent implements OnInit {
 
