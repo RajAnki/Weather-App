@@ -9,8 +9,7 @@ import { TimeMachineRequestService } from '../../../services/time-machine-reques
  */
 @Component({
   selector: 'app-user-input',
-  templateUrl: './user-input.component.html',
-  styleUrls: ['./user-input.component.css']
+  templateUrl: './user-input.component.html'
 })
 export class UserInputComponent implements OnInit {
 
